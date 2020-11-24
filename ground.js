@@ -1,18 +1,17 @@
 class Ground {
-    //Creation of objects
-    constructor(x,y,width,height){
-        var options = {
-            isStatic : true
-        }
-        this.body = Bodies.rectangle(x,y,width,height,options) 
-        this.width = width
-        this.height = height
-        World.add(world,this.body)
+    constructor(x,y,width,height) {
+      var options = {
+          isStatic: true
+      }
+      this.body = Bodies.rectangle(x,y,width,height,options);
+      this.width = width;
+      this.height = height;
+      World.add(world, this.body);
     }
-    //how the object should be displayed
     display(){
-
-        rectMode(CENTER)
-        rect(this.body.position.x, this.body.position.y,this.width,this.height) 
+      var pos =this.body.position;
+      rectMode(CENTER);
+      noStroke()
+      rect(pos.x, pos.y, this.width, this.height);
     }
-}
+  };
